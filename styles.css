@@ -1,0 +1,876 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+.navbar {
+    background: #131313;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.navbar__container{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+#navbar__logo{
+    background-color: #002865;
+    background-image: linear-gradient(to top, #00AFF0 0%, #002865 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+.fa-crown{
+    font-size: 2rem !important;
+    color:#00AFF0;
+    margin-right: 0.5rem;
+}
+
+.navbar__menu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+}
+
+.navbar__item{
+    height: 80px;
+}
+
+.navbar__links{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+}
+
+
+.navbar__links:hover{
+    color: #00AFF0;
+    transition: all 0.3s ease;
+}
+
+
+@media screen and (max-width: 960px){
+    .navbar__container{
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        padding: 0;
+    }
+
+    .navbar__menu{
+        display: grid;
+        grid-template-columns: auto;
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        top: -1000px;
+        opacity: 0;
+        transition: all 0.5s ease;
+        height: 50vh;
+        z-index: -1;
+    }
+
+    .navbar__menu.active{
+        background: #131313;
+        top: 100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 99;
+        height: 50vh;
+        font-size: 1.6rem;
+    }
+
+    #navbar__logo{
+        padding-left: 25px;
+    }
+
+    .navbar__toggle .bar {
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: #fff
+    }
+
+    .navbar__item{
+        width: 100%;
+    }
+
+    .navbar__links{
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+    }
+
+    #mobile-menu{
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%, 20%);
+    }
+
+    .navbar__btn{
+        padding-bottom: 2rem;
+    }
+
+    .navbar__toggle .bar{
+        display: block;
+        cursor: pointer;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(2){
+        opacity: 0;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    #mobile-menu.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+
+
+.main__container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-self: center;
+    margin: 0 auto;
+    height: 90vh;
+    background-color: transparent;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 50px;
+}
+
+.main__content h1{
+    font-size: 4rem;
+    background-color: #002865;
+    background-image: linear-gradient(to top, #002865, #131313);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.main__content h3{
+    font-size: 1.5rem;
+    background-color: #002865;
+    background-image: linear-gradient(to top, #002865, #131313);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+@media screen and (max-width: 768px){
+    .main__container{
+        display: grid;
+        grid-template-columns: auto;
+        align-items: center;
+        justify-self: center;
+        width: 100%;
+        margin: 0 auto;
+        height: 90vh;
+
+    }
+
+    .main__content{
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .main__content h1{
+        font-size: 2.5rem;
+        margin-top: 2rem;
+    }
+
+    .main__content h3{
+        font-size: 1.5rem;
+    }
+}
+
+
+
+.NewGen__container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.NewGen__card{
+    margin: 1rem;
+    height: 525px;
+    width: 400px;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17,0.6) 100%), url('images/alc.jpg');
+    background-size: cover;
+    position: relative;
+    color: #fff;
+}
+
+.NewGen__card:nth-child(2){
+    margin: 1rem;
+    height: 525px;
+    width: 400px;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17,0.6) 100%), url('images/RF.jpg');
+    background-size: cover;
+    position: relative;
+    color: #fff;
+}
+
+.NewGen h2{
+    position: absolute;
+    top: 350px;
+    left: 30px;
+}
+
+.NewGen__card p{
+    position:absolute;
+    top: 400px;
+    left: 30px;
+}
+
+.NewGen__card button{
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #00AFF0;
+    position: absolute;
+    top: 440px;
+    left: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.NewGen__card:hover{
+    transform: scale(1.075);
+    transition: .2s ease-in;
+    cursor: pointer;
+}
+
+/*---------------------------------------------------------------------------------------------------
+/*---------------------------------------------------------------------------------------------------
+/*---------------------------------------------------------------------------------------------------*/
+
+.NewGenP__container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+/*Challengers  page Alcaraz Card*/
+.NewGenP__card-with-table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+}
+.NewGenJ__card,
+.NewGenP__card{
+    margin: 1rem;
+    /*height: 525px;*/
+    height: 525px; /*new line*/
+    flex-direction: column; /*new line*/
+    justify-content: flex-start; /*new line*/
+    padding: 1rem; /*new line*/
+    width: 400px;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17,0.6) 100%), url('images/Alc2.jpg');
+    background-size: cover;
+    position: relative;
+    color: #fff;
+}
+
+
+/*---------------------------------------------------------------------------------------------------
+/*---------------------------------------------------------------------------------------------------
+/*---------------------------------------------------------------------------------------------------
+/*Table  Section*/
+
+.card-table{
+    width: 100%;
+    margin-top: 1rem;
+    border-collapse: collapse;
+}
+
+.card-table td{
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-weight: 650;
+}
+
+.card-table tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+
+
+
+
+.NewGenJ__card,
+.NewGenP h2{
+
+    text-align: center;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.NewGenP__card p{
+    position:absolute;
+    top: 400px;
+    left: 30px;
+}
+
+.NewGenP__card button{
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #00AFF0;
+    position: absolute;
+    top: 440px;
+    left: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.NewGenP__card:hover{
+    transform: scale(1.075);
+    transition: .2s ease-in;
+}
+
+/*Footer section*/
+
+footer{
+    position: relative;
+    bottom: 4%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    font-size: 10px;
+    text-align: center;
+}
+
+
+
+.OldGen h1{
+    background-color: #00AFF0;
+    background-size: 100%;
+    margin-bottom: 5rem;
+    font-size: 2.5rem;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.OldGen__container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.OldGen__card{
+    margin: 1rem;
+    height: 525px;
+    width: 400px;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17,0.6) 100%), url('images/RF1.jpg');
+    background-size: cover;
+    position: relative;
+    color: #fff;
+}
+
+.OldGenN__card{
+    margin: 1rem;
+    height: 525px;
+    width: 400px;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17,0.6) 100%), url('images/RN1.jpg');
+    background-size: cover;
+    position: relative;
+    color: #fff;
+}
+
+.OldGenD__card{
+    margin: 1rem;
+    height: 525px;
+    width: 400px;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17,0.6) 100%), url('images/NJ.JPG');
+    background-size: cover;
+    position: relative;
+    color: #fff;
+}
+
+.OldGenN__card,
+.OldGenD__card,
+.OldGen h2{
+    text-align: center;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.OldGen__card p{
+    position:absolute;
+    top: 400px;
+    left: 30px;
+}
+
+.OldGen__card button{
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #00AFF0;
+    position: absolute;
+    top: 440px;
+    left: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.OldGen__card:hover{
+    transform: scale(1.075);
+    transition: .2s ease-in;
+}
+
+/*Jannik Sinner  Card Section*/
+
+.NewGenJ__container{
+    display: flex;
+    justify-content: center;
+}
+
+.NewGenJ__card{
+    margin: 1rem;
+    height: 525px;
+    width: 400px;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17,0.6) 100%), url('images/JS.jpg');
+    background-size: cover;
+    position: relative;
+    color: #fff;
+}
+
+.NewGenJ2__card{
+    margin: 1rem;
+    height: 525px;
+    width: 400px;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17,0.6) 100%), url('images/JSTrophy.PNG');
+    background-size: cover;
+    position: relative;
+    color: #fff;
+}
+
+.NewGenJ h2{
+    position: absolute;
+    top: 450px;
+    left: 30px;
+}
+
+.NewGenJ__card p{
+    position:absolute;
+    top: 400px;
+    left: 30px;
+}
+
+.NewGenJ__card button{
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #00AFF0;
+    position: absolute;
+    top: 440px;
+    left: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.NewGenJ__card:hover{
+    transform: scale(1.075);
+    transition: .2s ease-in;
+}
+
+/*Carlos Alcaraz Card Section*/
+body{
+    background-image: url(/images/ATP_Tour_logo-cropped\ \(1\).svg);
+    background-repeat: repeat-y;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+.main,
+.NewGen,
+.NewGenP,
+.newGenJ,
+.NewGenC{
+    width: 100%;
+    text-align: center;
+    color: #000;
+    padding: 2rem;
+}
+
+
+.NewGenC__container{
+    display: flex;
+    justify-content: center;
+}
+
+.NewGenC__card{
+    margin: 1rem;
+    height: 525px;
+    width: 400px;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17,0.6) 100%), url('images/Alc2.jpg');
+    background-size: cover;
+    position: relative;
+    color: #fff;
+}
+
+.NewGenC2__card{
+    margin: 1rem;
+    height: 525px;
+    width: 400px;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17,0.6) 100%), url('images/CATrophy.JPG');
+    background-size: cover;
+    position: relative;
+    color: #fff;
+}
+
+.NewGenC h2{
+    position: absolute;
+    top: 450px;
+    left: 30px;
+}
+
+.NewGenC__card p{
+    position:absolute;
+    top: 400px;
+    left: 30px;
+}
+
+.NewGenC__card button{
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #00AFF0;
+    position: absolute;
+    top: 440px;
+    left: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.NewGenC__card:hover{
+    transform: scale(1.075);
+    transition: .2s ease-in;
+}
+
+/*-------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------*/
+.NewGen h1,
+.NewGenP h1,
+.NewGenJ h1,
+.NewGenC h1,
+.JSDesc h1,
+.CADesc h1{
+    background: transparent;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    -webkit-text-fill-color: #000;
+    text-align: center;
+}
+
+.JSDesc h3,
+.CADesc h3{
+    background: transparent;
+    color: #000;
+    font-size: 1.25rem;
+    margin: 3rem auto;
+    padding: 0 20px;
+    text-align: center;
+}
+/*Roger Federer Card Section*/
+.OldGen,
+.OldGenN,
+.OldGenD,
+.OldGenF{
+    width: 100%;
+    text-align: center;
+    color: #000;
+    padding: 2rem;
+}
+.OldGen h1,
+.OldGenD h1,
+.OldGenN h1,
+.OldGenF h1,
+.RNDesc h1,
+.NDDesc h1,
+.RFDesc h1 {
+    background: transparent;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    -webkit-text-fill-color: #000;
+    text-align: center;
+}
+
+.RNDesc h3,
+.NDDesc h3,
+.RFDesc h3{
+    background: transparent;
+    color: #000;
+    font-size: 1.25rem;
+    margin: 3rem auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+/*-------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------*/
+
+.OldGenF__container{
+    display: flex;
+    justify-content: center;
+}
+
+.OldGenF__card{
+    margin: 1rem;
+    height: 525px;
+    width: 400px;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17,0.6) 100%), url('images/RF1.jpg');
+    background-size: cover;
+    position: relative;
+    color: #fff;
+}
+
+.OldGenF2__card{
+    margin: 1rem;
+    height: 525px;
+    width: 400px;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17,0.6) 100%), url('images/RFTrophy.jpg');
+    background-size: cover;
+    position: relative;
+    color: #fff;
+}
+
+.OldGenF h2{
+    position: absolute;
+    top: 450px;
+    left: 30px;
+}
+
+.OldGenF__card p{
+    position:absolute;
+    top: 400px;
+    left: 30px;
+}
+
+.OldGenF__card button{
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #00AFF0;
+    position: absolute;
+    top: 440px;
+    left: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.OldGenF__card:hover{
+    transform: scale(1.075);
+    transition: .2s ease-in;
+}
+
+/*Rafael Nadal Card Section*/
+
+
+
+.OldGenN__container{
+    display: flex;
+    justify-content: center;
+}
+
+.OldGenN__card{
+    margin: 1rem;
+    height: 525px;
+    width: 400px;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17,0.6) 100%), url('images/RN1.jpg');
+    background-size: cover;
+    position: relative;
+    color: #fff;
+}
+
+.OldGenN2__card{
+    margin: 1rem;
+    height: 525px;
+    width: 400px;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17,0.6) 100%), url('images/RNTrophy.jpg');
+    background-size: cover;
+    position: relative;
+    color: #fff;
+}
+
+.OldGenN h2{
+    position: absolute;
+    top: 450px;
+    left: 30px;
+}
+
+.OldGenN__card p{
+    position:absolute;
+    top: 400px;
+    left: 30px;
+}
+
+.OldGenN__card button{
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #00AFF0;
+    position: absolute;
+    top: 440px;
+    left: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.OldGenN__card:hover{
+    transform: scale(1.075);
+    transition: .2s ease-in;
+}
+
+/*Novak Djokovic Card Section*/
+
+
+.OldGenD__container{
+    display: flex;
+    justify-content: center;
+}
+
+.OldGenD__card{
+    margin: 1rem;
+    height: 525px;
+    width: 400px;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17,0.6) 100%), url('images/NJ.JPG');
+    background-size: cover;
+    position: relative;
+    color: #fff;
+}
+
+.OldGenD2__card{
+    margin: 1rem;
+    height: 525px;
+    width: 400px;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17,0.6) 100%), url('images/NDTrophy.jpg');
+    background-size: cover;
+    position: relative;
+    color: #fff;
+}
+
+.OldGenD h2{
+    position: absolute;
+    top: 450px;
+    left: 30px;
+}
+
+.OldGenD__card p{
+    position:absolute;
+    top: 400px;
+    left: 30px;
+}
+
+.OldGenD__card button{
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #00AFF0;
+    position: absolute;
+    top: 440px;
+    left: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.OldGenD__card:hover{
+    transform: scale(1.075);
+    transition: .2s ease-in;
+}
+
+
+/*Fun Fact section*/
+
+.fcontainer {
+    margin-top: 200px;
+    padding: 20px;
+    text-align: center;
+}
+button {
+    padding: 10px 20px;
+    margin: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #0400ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+.fun-fact {
+    margin-top: 20px;
+    font-size: 30px;
+    color: #333;
+    font-weight: 700;
+}
