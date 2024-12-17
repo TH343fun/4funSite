@@ -39,14 +39,15 @@ const funFacts = [
 ];
 
 function displayRandomFact(){
-    const randomIndex = Math.floor(Math.random() * funFacts.length);
+    const randomIndex = Math.floor(Math.random() * funFacts.length); 
+    /*get floating point # from random function 0 inclusive, 1 exclusive. Multiple by length of the array above. Round down to the floor. generate this number
+    store into randomIndex variable*/
     const fact = funFacts[randomIndex];
+    /*access randomized item in the array and store in fact*/
 
     document.getElementById("fact-display").textContent = fact;
+    /*store factoid in the text that has elementID fact-display*/
 }
 
 document.getElementById("fact-button").addEventListener("click", displayRandomFact);
-document.getElementById("nav-fact-link").addEventListener("click", function(event){
-    event.preventDefault();
-    displayRandomFact();
-});
+/*listen for clicking of button, and display a random fact.*/
