@@ -537,7 +537,7 @@ footer{
 
 /*Carlos Alcaraz Card Section*/
 body{
-    background-image: url(/images/ATP_Tour_logo-cropped.svg);
+    background-image: url('/images/ATP_Tour_logo-cropped.svg');
     background-repeat: repeat-y;
     background-position: center;
     background-size: cover;
@@ -857,6 +857,7 @@ body{
     margin-top: 200px;
     padding: 20px;
     text-align: center;
+    height: 600px;
 }
 button {
     padding: 10px 20px;
